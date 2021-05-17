@@ -112,10 +112,8 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  let newItem=[];
   for (let i = 0; i < times; i++) {
-    newItem = callback(arr,num);
-    arr.push(newItem[0]);
+    callback(arr,num);
   }
   return arr;
 };
