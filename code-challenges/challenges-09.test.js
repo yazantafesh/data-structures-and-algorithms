@@ -15,7 +15,7 @@ const maxInArray = (arr) => {
       x = y
     }
     return x;
-  })
+  },0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,12 +32,8 @@ const courseInfo = {
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
-  let newArr = [];
-  for (const [key, value] of Object.entries(obj)) {
-    newArr.push(key)
-  }
-  return newArr;
+
+  return Object.keys(obj)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,10 +45,8 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value1) => {
-  // Solution code here...
-  for (const [key, value] of Object.entries(obj)) {
-    return value.includes(value1);
-  }
+ 
+  return Object.values(obj).includes(value1);
 
 };
 
