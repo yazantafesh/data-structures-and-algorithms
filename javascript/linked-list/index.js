@@ -13,53 +13,68 @@ class LinkedList {
   }
 
   insert(value) {
-    let node = new Node(value);
-    if (!this.head) {
-      this.head = node;
-    } else {
-      node.next = this.head;
-      this.head = node;
+    try{
+
+      let node = new Node(value);
+      if (!this.head) {
+        this.head = node;
+      } else {
+        node.next = this.head;
+        this.head = node;
+      }
+    }catch{
+      console.log('Please enter a valid input');
     }
   }
 
   includes(value) {
-    let pointer = this.head;
-    if (!this.head) {
-      return false;
-    } else {
+    try{
 
-      while (pointer.next) {
-        if (pointer.value == value) {
-          return true;
+      let pointer = this.head;
+      if (!this.head) {
+        return false;
+      } else {
+  
+        while (pointer.next) {
+          if (pointer.value == value) {
+            return true;
+          }
+          pointer = pointer.next;
+  
+          if (pointer.next == null && value == pointer.value) {
+            return true;
+          }
         }
-        pointer = pointer.next;
-
-        if (pointer.next == null && value == pointer.value) {
-          return true;
-        }
+        return false;
       }
-      return false;
+    }catch{
+      console.log('Please enter a valid input');
     }
   }
 
   toString() {
-    let string = '';
-    let pointer = this.head;
+    try{
 
-    while (pointer.next) {
-      if(pointer.value == null || pointer.value == undefined){
-        string = string + `NULL -> `;
-      }else{
-
-        string = string + `{${pointer.value}} -> `
+      let string = '';
+      let pointer = this.head;
+  
+      while (pointer.next) {
+        if(pointer.value == null || pointer.value == undefined){
+          string = string + `NULL -> `;
+        }else{
+  
+          string = string + `{${pointer.value}} -> `
+        }
+        pointer = pointer.next;
+        if(pointer.next == null){
+          string = string + `{${pointer.value}}`
+        }
       }
-      pointer = pointer.next;
-      if(pointer.next == null){
-        string = string + `{${pointer.value}}`
-      }
+  
+      return string;
+    }catch{
+      console.log('An error occured');
     }
-
-    return string;
 
   }
 }
