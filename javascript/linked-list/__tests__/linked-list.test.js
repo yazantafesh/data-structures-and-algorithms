@@ -68,7 +68,68 @@ describe('Linked List', () => {
     expect(ll.toString()).toBe('{d} -> {c} -> NULL -> {false} -> {a}');
   });
 
+  it(' Add a node to the end ',()=>{
+    const ll = new LinkedList();
 
+    ll.append('one');
+    ll.append('two');
 
+    expect(ll.head.next.value).toBe('two');
+  });
+
+  it('Add multiple nodes ',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+
+    expect(ll.head.next.next.next.value).toBe('four');
+  });
+  it('Insert in the middle',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertBefore('yazan','three');
+
+    expect(ll.head.next.next.value).toBe('yazan');
+  })
+  it('Insert before first',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('fourth');
+    ll.insertBefore('yazan','one');
+
+    expect(ll.head.value).toBe('yazan');
+  })
+  it('Insert after a value',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('yazan','three');
+
+    expect(ll.head.next.next.next.value).toBe('yazan');
+  })
+  it('Insert after last',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('yazan','four');
+
+    expect(ll.head.next.next.next.next.value).toBe('yazan');
+  })
 
 });
