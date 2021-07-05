@@ -126,6 +126,22 @@ class LinkedList {
       pointer = pointer.next;
     }
   }
+
+  kthFromEnd(k){
+    
+    let pointer=this.head;
+    let array = [];
+
+   while(pointer){
+     array.push(pointer.value);
+     pointer = pointer.next;
+   }
+  if (array.length <= k || k < 0){
+    return 'Exception';
+  } else {
+    return array[array.length-1-k]
+  }
+  }
 }
 
 module.exports = LinkedList;

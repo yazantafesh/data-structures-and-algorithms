@@ -132,4 +132,67 @@ describe('Linked List', () => {
     expect(ll.head.next.next.next.next.value).toBe('yazan');
   })
 
+  describe('Kth from end', () => {
+
+    it('k is greater than the length of the linked list',()=>{
+      const ll = new LinkedList();
+  
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('yazan','four');
+  
+      expect(ll.kthFromEnd(9)).toBe('Exception');
+    })
+
+    it('k and the length are the same',()=>{
+      const ll = new LinkedList();
+  
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('yazan','four');
+  
+      expect(ll.kthFromEnd(5)).toBe('Exception');
+    })
+
+    it('K is not a positive integer',()=>{
+      const ll = new LinkedList();
+  
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('yazan','four');
+  
+      expect(ll.kthFromEnd(-5)).toBe('Exception');
+    })
+
+    it('Linked list of size 1',()=>{
+      const ll = new LinkedList();
+  
+      ll.insert('one');
+  
+      expect(ll.kthFromEnd(1)).toBe('Exception');
+      expect(ll.kthFromEnd(0)).toBe('one');
+      expect(ll.kthFromEnd(-1)).toBe('Exception');
+    })
+
+    it('Happy Path',()=>{
+      const ll = new LinkedList();
+  
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('yazan','four');
+  
+      expect(ll.kthFromEnd(2)).toBe('three');
+   
+    })
+
+  });
+
 });
