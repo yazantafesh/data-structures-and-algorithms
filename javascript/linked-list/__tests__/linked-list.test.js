@@ -1,7 +1,8 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const LinkedList = require('../index').LinkedList;
+const zipLists = require('../index').zipLists;
 
 describe('Linked List', () => {
 
@@ -194,5 +195,17 @@ describe('Linked List', () => {
     })
 
   });
+
+  describe('Zip linked lists',()=>{
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    for(let i=0;i<5;i++){
+      list1.append(i);
+    }
+    for(let i=0;i<5;i++){
+      list1.append(i+10);
+    }
+    expect(zipLists(list1,list2)).toBe('{0} -> {1} -> {2} -> {3} -> {4} -> {10} -> {11} -> {12} -> {13} -> {14}');
+  })
 
 });
