@@ -10,6 +10,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.last = null;
   }
 
   insert(value) {
@@ -18,6 +19,7 @@ class LinkedList {
       let node = new Node(value);
       if (!this.head) {
         this.head = node;
+        this.last = node;
       } else {
         node.next = this.head;
         this.head = node;
@@ -82,12 +84,14 @@ class LinkedList {
     const node = new Node(value);
     if (!this.head) {
       this.head = node;
+      this.last = node;
     } else {
       let pointer = this.head;
       while (pointer.next) {
         pointer = pointer.next;
       }
       pointer.next = node;
+      this.last = node;
     }
   }
 
@@ -119,6 +123,9 @@ class LinkedList {
     while (pointer) {
 
       if (pointer.value == value) {
+        if(pointer.next == null){
+          this.last = node;
+        }
         node.next = pointer.next;
         pointer.next = node;
         break;
