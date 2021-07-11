@@ -62,3 +62,13 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 ***Peek*** - When you peek you will view the value of the front Node in the queue. If called when the queue is empty an exception will be raised.
 
 ***IsEmpty*** - returns true when queue is empty otherwise returns false.
+
+### Pseudo Queue
+
+***Enqueue*** - Nodes or items that are added to the queue.
+
+***Dequeue*** - Nodes or items that are removed from the queue. If called when the queue is empty an exception will be raised.
+
+## Whiteboard Process
+
+![stack-queue-pseudo](../../pictures/stack-queue-pseudo.png)
