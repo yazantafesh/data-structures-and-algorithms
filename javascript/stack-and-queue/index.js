@@ -8,25 +8,25 @@ class Node {
 }
 
 class Stack {
-  constructor(linkedList) {
-    this.storage = linkedList;
+  constructor() {
+    this.top = null;
   }
 
   peek() {
-    if (!this.storage.head) {
+    if (!this.top) {
       return 'Empty Stack';
     }
-    return this.storage.head.value;
+    return this.top.value;
   }
 
   push(value) {
     try {
       let node = new Node(value);
-      if (!this.storage.head) {
-        this.storage.head = node;
+      if (!this.top) {
+        this.top = node;
       } else {
-        node.next = this.storage.head;
-        this.storage.head = node;
+        node.next = this.top;
+        this.top = node;
       }
     } catch {
       console.log('Please enter a valid input');
@@ -34,19 +34,19 @@ class Stack {
   }
 
   pop() {
-    if (!this.storage.head) {
+    if (!this.top) {
       return 'Empty Stack';
     }
-    let holder = this.storage.head;
+    let holder = this.top;
 
-    this.storage.head = holder.next;
+    this.top = holder.next;
     holder.next = null;
     return holder.value;
 
   }
 
   isEmpty() {
-    if (!this.storage.head) {
+    if (!this.top) {
       return true;
     } else {
       return false;
@@ -55,19 +55,20 @@ class Stack {
 }
 
 class Queue {
-  constructor(linkedList) {
-    this.storage = linkedList;
+  constructor() {
+    this.front = null;
+    this.rear = null;
   }
 
   enqueue(value) {
     try {
       let node = new Node(value);
-      if (!this.storage.head) {
-        this.storage.head = node;
-        this.storage.last = node;
+      if (!this.front) {
+        this.front = node;
+        this.rear = node;
       } else {
-        this.storage.last.next = node;
-        this.storage.last = node;
+        this.rear.next = node;
+        this.rear = node;
         }
     } catch {
       console.log('Please enter a valid input');
@@ -75,30 +76,67 @@ class Queue {
   }
 
   dequeue() {
-    if (!this.storage.head) {
+    if (!this.front) {
       return 'Empty Queue';
     }
-    let holder = this.storage.head;
+    let holder = this.front;
 
-    this.storage.head = holder.next;
+    this.front = holder.next;
     holder.next = null;
     return holder.value;
   }
 
   peek() {
-    if (!this.storage.head) {
+    if (!this.front) {
       return 'Empty Queue';
     }
-    return this.storage.head.value;
+    return this.front.value;
   }
 
   isEmpty() {
-    if (!this.storage.head) {
+    if (!this.front) {
       return true;
     } else {
       return false;
     }
   }
+
+  
 }
 
-module.exports = { Stack, Queue };
+class PseudoQueue{
+     
+  constructor()
+  {
+      this.s1 = new Stack();
+      this.s2 = new Stack();
+  }
+   
+  enqueue(value)
+  {
+       
+      while (this.s1.top)
+      {
+          this.s2.push(this.s1.pop());
+      }
+      this.s1.push(value);
+
+      while (this.s2.top)
+      {
+          this.s1.push(this.s2.pop());
+      }
+  }
+   
+
+  dequeue()
+  {
+       
+      if (!this.s1.top)
+      {
+          return "Pseudo Queue is Empty";
+      }
+      return this.s1.pop();
+  }
+  }
+
+module.exports = { Stack, Queue, PseudoQueue };
