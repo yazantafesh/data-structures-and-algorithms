@@ -69,6 +69,12 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ***Dequeue*** - Nodes or items that are removed from the queue. If called when the queue is empty an exception will be raised.
 
+### Animal Shelter
+
+***Enqueue*** - Nodes or items that are added to the queue.
+
+***Dequeue*** - Nodes or items that are removed from the queue. If called when the queue is empty an exception will be raised.
+
 ## Whiteboard Process
 
-![stack-queue-pseudo](../../pictures/stack-queue-pseudo.png)
+![stack-queue-animal-shelter](../../pictures/stack-queue-animal-shelter.png)
