@@ -133,4 +133,41 @@ class PseudoQueue {
   }
 }
 
-module.exports = { Stack, Queue, PseudoQueue };
+class AnimalShelter {
+  constructor() {
+    this.front = null;
+    this.rear = null;
+  }
+
+  enqueue(value) {
+
+    if (value != "dog" && value != "cat") {
+      return "can only accept cat or dog";
+    }
+    try {
+
+      let node = new Node(value);
+      if (!this.front) {
+        this.front = node;
+        this.rear = node;
+      } else {
+        this.rear.next = node;
+        this.rear = node;
+      }
+    } catch {
+      console.log('Please enter a valid input');
+    }
+  }
+
+  dequeue() {
+    if (!this.front) {
+      return 'Animal Shelter is Empty';
+    }
+    let holder = this.front;
+
+    this.front = holder.next;
+    holder.next = null;
+    return holder.value;
+  }
+}
+module.exports = { Stack, Queue, PseudoQueue, AnimalShelter };
