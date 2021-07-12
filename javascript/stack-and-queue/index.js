@@ -104,39 +104,33 @@ class Queue {
   
 }
 
-class PseudoQueue{
-     
-  constructor()
-  {
-      this.s1 = new Stack();
-      this.s2 = new Stack();
-  }
-   
-  enqueue(value)
-  {
-       
-      while (this.s1.top)
-      {
-          this.s2.push(this.s1.pop());
-      }
-      this.s1.push(value);
+class PseudoQueue {
 
-      while (this.s2.top)
-      {
-          this.s1.push(this.s2.pop());
-      }
+  constructor() {
+    this.s1 = new Stack();
+    this.s2 = new Stack();
   }
-   
 
-  dequeue()
-  {
-       
-      if (!this.s1.top)
-      {
-          return "Pseudo Queue is Empty";
-      }
-      return this.s1.pop();
+  enqueue(value) {
+
+    while (this.s1.top) {
+      this.s2.push(this.s1.pop());
+    }
+    this.s1.push(value);
+
+    while (this.s2.top) {
+      this.s1.push(this.s2.pop());
+    }
   }
+
+
+  dequeue() {
+
+    if (!this.s1.top) {
+      return "Pseudo Queue is Empty";
+    }
+    return this.s1.pop();
   }
+}
 
 module.exports = { Stack, Queue, PseudoQueue };
