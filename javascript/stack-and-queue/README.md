@@ -75,6 +75,13 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ***Dequeue*** - Nodes or items that are removed from the queue. If called when the queue is empty an exception will be raised.
 
+### Multi-bracket Validation.
+
+Write a function called validate brackets
+Arguments: string
+Return: boolean
+representing whether or not the brackets in the string are balanced
+
 ## Whiteboard Process
 
-![stack-queue-animal-shelter](../../pictures/stack-queue-animal-shelter.png)
+![stack-queue-brackets](../../pictures/stack-queue-brackets.png)
