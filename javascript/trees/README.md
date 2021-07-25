@@ -20,6 +20,8 @@ Define a method for each of the depth first traversals:
 
 - post order which returns an array of the values, ordered appropriately.
 
+- find max
+
 Any exceptions or errors that come from your code should be semantic, capture-able errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 ### Binary Search Tree
@@ -57,3 +59,13 @@ Adds a new node with that value in the correct location in the binary search tre
 Argument: value
 
 Returns: boolean indicating whether or not the value is in the tree at least once.
+
+- ***findMax***
+
+Arguments: none
+
+Returns: number
+
+## Whiteboard Process
+
+![trees](../../pictures/tree-max.png)
