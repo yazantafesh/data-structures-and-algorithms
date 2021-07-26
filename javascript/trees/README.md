@@ -66,6 +66,12 @@ Arguments: none
 
 Returns: number
 
+- ***Write a function called breadth first***
+
+Arguments: tree
+
+Return: list of all values in the tree, in the order they were encountered
+
 ## Whiteboard Process
 
-![trees](../../pictures/tree-max.png)
+![trees](../../pictures/tree-breadth-first.png)

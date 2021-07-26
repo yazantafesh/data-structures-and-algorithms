@@ -98,4 +98,34 @@ search(value){
 }
 }
 
-module.exports={ Node, BinaryTree, BinarySearchTree }
+function breadthFirst(tree) {
+
+  let rootNode = tree.root;
+
+  if (rootNode === null) {
+    return 'Empty Tree';
+  }
+
+  let tempQueue = [];
+  let breadthOrder = [];
+
+  tempQueue.push(rootNode);
+
+  while (tempQueue.length > 0) {
+
+    let currentNode = tempQueue[0];
+
+    if (currentNode.left !== null) {
+      tempQueue.push(currentNode.left)
+    }
+
+    if (currentNode.right !== null) {
+      tempQueue.push(currentNode.right)
+    }
+
+    breadthOrder.push(tempQueue.shift().value)
+  }
+  return breadthOrder;
+}
+
+module.exports={ Node, BinaryTree, BinarySearchTree, breadthFirst }
