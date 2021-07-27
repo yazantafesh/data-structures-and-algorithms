@@ -72,6 +72,12 @@ Arguments: tree
 
 Return: list of all values in the tree, in the order they were encountered
 
+- ***Write a function called fizz buzz tree***
+
+Arguments: k-ary tree
+
+Return: new k-ary tree
+
 ## Whiteboard Process
 
-![trees](../../pictures/tree-breadth-first.png)
+![trees](../../pictures/tree-fizz-buzz.png)
