@@ -32,4 +32,7 @@ Arguments: key, value
   Arguments: key
 
   Returns: Index in the collection for that key
-  
+
+## Whiteboard Process
+
+![whiteboard](./hashmap-repeated-word.png)

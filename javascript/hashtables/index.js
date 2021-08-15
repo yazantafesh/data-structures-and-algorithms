@@ -18,17 +18,17 @@ class LinkedList {
       this.head = node;
     }
   }
-  getValue(key){
+  getValue(key) {
     let curr = this.head;
-    let value=[];
-    while(curr){
-        if(Object.keys(curr.value).includes(key)){
-            value.push(curr.value[key]);
-        }
-        curr=curr.next;
+    let value = [];
+    while (curr) {
+      if (Object.keys(curr.value).includes(key)) {
+        value.push(curr.value[key]);
+      }
+      curr = curr.next;
     }
     return value;
-}
+  }
 }
 
 class Hashtable {
@@ -79,8 +79,29 @@ class Hashtable {
   }
 }
 
-module.exports={
+function repeatedWord(string) {
+  if(!string){
+    return 'Empty String';
+  }
+
+  let hashTable = new Hashtable(4000);
+
+  let words = string.toLowerCase().split(',').join('').split(' ');
+
+  for (let i = 0; i < words.length; i++) {
+
+    if (hashTable.contains(words[i])) {
+      return words[i];
+    } else {
+      hashTable.add(words[i]);
+    }
+  }
+  return 'No repeated words found';
+}
+
+module.exports = {
   Node,
   LinkedList,
-  Hashtable
+  Hashtable,
+  repeatedWord
 }
