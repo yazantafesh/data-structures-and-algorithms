@@ -128,4 +128,18 @@ function breadthFirst(tree) {
   return breadthOrder;
 }
 
-module.exports={ Node, BinaryTree, BinarySearchTree, breadthFirst }
+function treeIntersection(tree1,tree2){
+  let array1 = tree1.preOrder();
+  let array2 = tree2.preOrder();
+
+  let results = [];
+
+  for(let i=0;i<array1.length;i++){
+      if(array2.includes(array1[i])){
+          results.push(array1[i]);
+      }
+  }
+  return results;
+}
+
+module.exports={ Node, BinaryTree, BinarySearchTree, breadthFirst, treeIntersection }
