@@ -80,4 +80,4 @@ Return: new k-ary tree
 
 ## Whiteboard Process
 
-![trees](../../pictures/tree-fizz-buzz.png)
+![trees](../../pictures/hashmap-tree-intersection.png)
