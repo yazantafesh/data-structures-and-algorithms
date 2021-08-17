@@ -35,4 +35,4 @@ Arguments: key, value
 
 ## Whiteboard Process
 
-![whiteboard](./hashmap-repeated-word.png)
+![whiteboard](./white-board-33.PNG)
